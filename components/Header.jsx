@@ -1,30 +1,31 @@
-import styled from 'styled-components'
-import Head from 'next/head';
+import styled from "styled-components";
+import React from 'react';
+import Head from "next/head";
 
 const Link = styled.a`
-marginRight: 15;
-`
-const headerStyle = {
-  margin: 40,
-  display: 'flex',
-  justifyContent: 'space-around',
-  alignItems: 'center'
-}
+  margin-right: 15
+`;
+
+const HeaderWrapper = styled.div`
+margin: 40px;
+  display: flex;
+  justify-content: space-around;
+`;
 
 const Header = () => (
-  <div style={headerStyle}>
+  <HeaderWrapper>
     <Head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>GigIndia</title>
       <link href="/static/min.css" rel="stylesheet" />
     </Head>
-    <Link href="/">
-      Home
-        </Link>
-    <Link href="/about">
-      About
-        </Link>
+    <Link href="/">Home</Link>
+    <div>
+      <Link href="/student">Student</Link>
+      &nbsp;&nbsp;| &nbsp;&nbsp;
+      <Link href="/bussiness">Bussiness</Link>
+    </div>
+  </HeaderWrapper>
+);
 
-  </div>
-)
-
-export default Header
+export default Header;
